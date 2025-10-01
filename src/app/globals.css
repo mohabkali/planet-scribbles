@@ -2,8 +2,9 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000; /* pure black */
 }
+
 
 @theme inline {
   --color-background: var(--background);
