@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "@/app/globals.css";
-import CartButton from "@/components/CartButton";  // <-- add this
+import CartButton from "@/components/CartButton";
 
 export const metadata: Metadata = {
   title: "Planet Scribbles",
@@ -10,19 +11,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body  className="min-h-screen bg-gray-50 text-black">
-        <div className="max-w-6xl mx-auto px-4">
-          <header className="py-5 flex items-center justify-between">
-            <a href="/" className="font-bold text-xl">🟢 Planet Scribbles</a>
+      <body className="min-h-screen bg-gray-50 text-gray-900">
+        <div className="mx-auto max-w-6xl px-4">
+          <header className="flex items-center justify-between py-5">
+            <Link href="/" className="text-xl font-bold">🟢 Planet Scribbles</Link>
             <nav className="flex gap-5">
-              <a href="/shop" className="hover:underline">Shop</a>
-              <a href="/events" className="hover:underline">Events</a>
-              <a href="/checkout" className="hover:underline">Checkout</a>
+              <Link href="/shop" className="hover:underline">Shop</Link>
+              <Link href="/events" className="hover:underline">Events</Link>
+              <Link href="/checkout" className="hover:underline">Checkout</Link>
             </nav>
-            <CartButton /> {/* now defined */}
+            <CartButton />
           </header>
           <main className="py-8">{children}</main>
-          <footer className="py-8 text-sm text-center text-gray-500">
+          <footer className="py-8 text-center text-sm text-gray-500">
             © {new Date().getFullYear()} Planet Scribbles · Printing & Packaging
           </footer>
         </div>
